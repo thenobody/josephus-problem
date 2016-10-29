@@ -1,13 +1,13 @@
-package net.thenobody.josephus
+package net.thenobody.josephus.solver
 
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * Created by antonvanco on 29/10/2016.
   */
-class RecursiveJosephusProblemSolverTest extends FlatSpec with Matchers {
+class IterativeJosephusProblemSolverTest extends FlatSpec with Matchers {
 
-  behavior of classOf[RecursiveJosephusProblemSolver].getSimpleName
+  behavior of classOf[IterativeJosephusProblemSolver].getSimpleName
 
   it should "solve the problem with small input values" in {
     val testCases = Map(
@@ -19,7 +19,7 @@ class RecursiveJosephusProblemSolverTest extends FlatSpec with Matchers {
       (20, 4) -> 17
     )
 
-    val instance = new RecursiveJosephusProblemSolver
+    val instance = new IterativeJosephusProblemSolver
 
     testCases.foreach {
       case ((count, step), expResult) =>
@@ -39,7 +39,7 @@ class RecursiveJosephusProblemSolverTest extends FlatSpec with Matchers {
       (20000, 4000) -> 16253
     )
 
-    val instance = new RecursiveJosephusProblemSolver
+    val instance = new IterativeJosephusProblemSolver
 
     testCases.foreach {
       case ((count, step), expResult) =>
@@ -55,7 +55,7 @@ class RecursiveJosephusProblemSolverTest extends FlatSpec with Matchers {
 
     val expResult = 22
 
-    val instance = new RecursiveJosephusProblemSolver
+    val instance = new IterativeJosephusProblemSolver
     val result = instance.solve(count, step)
 
     result shouldEqual expResult
@@ -67,7 +67,7 @@ class RecursiveJosephusProblemSolverTest extends FlatSpec with Matchers {
 
     val expResult = 92620
 
-    val instance = new RecursiveJosephusProblemSolver
+    val instance = new IterativeJosephusProblemSolver
     val result = instance.solve(count, step)
 
     result shouldEqual expResult
@@ -79,7 +79,7 @@ class RecursiveJosephusProblemSolverTest extends FlatSpec with Matchers {
 
     val expResult = 6
 
-    val instance = new RecursiveJosephusProblemSolver
+    val instance = new IterativeJosephusProblemSolver
     val result = instance.solve(count, step)
 
     result shouldEqual expResult
@@ -95,7 +95,7 @@ class RecursiveJosephusProblemSolverTest extends FlatSpec with Matchers {
       (0, 0)
     )
 
-    val instance = new RecursiveJosephusProblemSolver
+    val instance = new IterativeJosephusProblemSolver
 
     testCases.foreach {
       case (count, step) => an [IllegalArgumentException] shouldBe thrownBy {

@@ -1,9 +1,10 @@
-package net.thenobody.josephus
+package net.thenobody.josephus.solver
 
 /**
   * Created by antonvanco on 29/10/2016.
   */
-class LinearJosephusProblemSolver extends JosephusProblemSolver {
+class IterativeJosephusProblemSolver extends JosephusProblemSolver {
+
   def solve(count: Int, step: Int): Int = (count, step) match {
     case (ValidValue(c), ValidValue(s)) =>
       (1 to c).foldLeft(0) {
