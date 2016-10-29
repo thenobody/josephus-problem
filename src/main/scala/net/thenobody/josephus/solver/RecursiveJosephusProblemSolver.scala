@@ -11,7 +11,8 @@ class RecursiveJosephusProblemSolver extends JosephusProblemSolver {
     * Recursive implementation of the solver
     *
     * Uses tail recursion carrying over the survivor index from the previous iteration and uses the value
-    * to calculate the current survivor index. Afterwards, recursion continues to the next level.
+    * to calculate the current survivor index. Afterwards, recursion continues to the next level using
+    * the new survivor index as index offset for the next step.
     *
     * Note: using tail recursion here (rather than regular) to avoid stack overflow errors caused by large input values.
     *

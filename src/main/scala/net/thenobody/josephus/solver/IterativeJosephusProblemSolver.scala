@@ -8,7 +8,7 @@ class IterativeJosephusProblemSolver extends JosephusProblemSolver {
   /**
     * Linear implementation of the solver
     * Iterates over individual steps until only one person remains (the result)
-    * During iteration the solver uses previous elimination step's index (survivor index) to calculate
+    * During iteration the solver uses previous elimination step's index (survivor index) as on 'offset' to calculate
     * the survivor index in the current step.
     *
     * @param count  the total number of participants
