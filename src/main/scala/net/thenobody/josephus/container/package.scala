@@ -5,6 +5,6 @@ package net.thenobody.josephus
   */
 package object container {
 
-  lazy val josephusProblemSolverInstance = new JosephusProblemSolver
+  lazy val linearProblemSolverInstance = new LinearJosephusProblemSolver
 
 }

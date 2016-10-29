@@ -1,20 +1,28 @@
 package net.thenobody.josephus
 
-import org.slf4j.LoggerFactory
-
 /**
   * Created by antonvanco on 29/10/2016.
   */
-class JosephusProblemSolver {
-  import JosephusProblemSolver._
+trait JosephusProblemSolver {
 
-  def solve(count: Int, step: Int): Int = {
-    logger.info("running")
-    0
+  /**
+    * Method returns the position of the final survivor for
+    * a given number of "participants" and the increment of elimination
+    * @param count  the total number of participants
+    * @param step   the increment of elimination
+    * @return       the index of the 'last man standing'
+    */
+  def solve(count: Int, step: Int): Int
+
+  /**
+    * Validation of input values
+    * Arguments need to be positive integers
+    */
+  object ValidValue {
+    def unapply(value: Int): Option[Int] = value match {
+      case v if v > 0 => Some(v)
+      case _ => None
+    }
   }
-
 }
 
-object JosephusProblemSolver {
-  val logger = LoggerFactory.getLogger(classOf[JosephusProblemSolver])
-}

@@ -5,9 +5,9 @@ import org.scalatest.{FlatSpec, Matchers}
 /**
   * Created by antonvanco on 29/10/2016.
   */
-class JosephusProblemSolverTest extends FlatSpec with Matchers {
+class RecursiveJosephusProblemSolverTest extends FlatSpec with Matchers {
 
-  behavior of classOf[JosephusProblemSolver].getSimpleName
+  behavior of classOf[RecursiveJosephusProblemSolver].getSimpleName
 
   it should "solve the problem with small input values" in {
     val testCases = Map(
@@ -19,7 +19,7 @@ class JosephusProblemSolverTest extends FlatSpec with Matchers {
       (20, 4) -> 17
     )
 
-    val instance = new JosephusProblemSolver
+    val instance = new RecursiveJosephusProblemSolver
 
     testCases.foreach {
       case ((count, step), expResult) =>
@@ -39,7 +39,7 @@ class JosephusProblemSolverTest extends FlatSpec with Matchers {
       (20000, 4000) -> 16253
     )
 
-    val instance = new JosephusProblemSolver
+    val instance = new RecursiveJosephusProblemSolver
 
     testCases.foreach {
       case ((count, step), expResult) =>
@@ -55,7 +55,7 @@ class JosephusProblemSolverTest extends FlatSpec with Matchers {
 
     val expResult = 22
 
-    val instance = new JosephusProblemSolver
+    val instance = new RecursiveJosephusProblemSolver
     val result = instance.solve(count, step)
 
     result shouldEqual expResult
@@ -67,7 +67,19 @@ class JosephusProblemSolverTest extends FlatSpec with Matchers {
 
     val expResult = 92620
 
-    val instance = new JosephusProblemSolver
+    val instance = new RecursiveJosephusProblemSolver
+    val result = instance.solve(count, step)
+
+    result shouldEqual expResult
+  }
+
+  it should "solve the problem with step larger than count" in {
+    val count = 10
+    val step = 30
+
+    val expResult = 6
+
+    val instance = new RecursiveJosephusProblemSolver
     val result = instance.solve(count, step)
 
     result shouldEqual expResult
@@ -83,22 +95,12 @@ class JosephusProblemSolverTest extends FlatSpec with Matchers {
       (0, 0)
     )
 
-    val instance = new JosephusProblemSolver
+    val instance = new RecursiveJosephusProblemSolver
 
     testCases.foreach {
       case (count, step) => an [IllegalArgumentException] shouldBe thrownBy {
         instance.solve(count, step)
       }
-    }
-  }
-
-  it should "fail when step is larger than count" in {
-    val count = 100
-    val step = count * 2
-
-    val instance = new JosephusProblemSolver
-    an [IllegalArgumentException] shouldBe thrownBy {
-      instance.solve(count, step)
     }
   }
 }

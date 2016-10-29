@@ -6,7 +6,7 @@ package net.thenobody.josephus
 object Main {
 
   def main(args: Array[String]): Unit = {
-    container.josephusProblemSolverInstance.solve(0, 1)
+    container.linearProblemSolverInstance.solve(0, 1)
   }
 
 }
