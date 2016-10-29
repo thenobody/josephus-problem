@@ -9,7 +9,7 @@ trait JosephusProblemSolver {
     * Method returns the position of the final survivor for
     * a given number of "participants" and the increment of elimination
     * @param count  the total number of participants
-    * @param step   theJosephusProblemSolver of elimination
+    * @param step   the increment of elimination
     * @return       the index of the 'last man standing'
     */
   def solve(count: Int, step: Int): Int
