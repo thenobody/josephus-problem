@@ -14,7 +14,7 @@ case class Config(
 object Config {
   val parser = new scopt.OptionParser[Config]("sbt run") {
     head("Josephus Problem Solver")
-    opt[String]("mode").text(s"one of: ${SolverMode.modes.keys.mkString(", ")}").action { case (mode, config) =>
+    opt[String]("mode").text(s"one of: ${SolverMode.modes.keys.mkString(", ")}").optional().action { case (mode, config) =>
       config.copy(mode = SolverMode(mode))
     }
     arg[Int]("<n>").text("count - the total number of \"participants\"").required().action { case (count, config) =>
